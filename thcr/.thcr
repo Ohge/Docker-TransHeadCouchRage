@@ -1,0 +1,13 @@
+#!/bin/bash
+
+### START COUCHPOTATO SERVICE
+/bin/bash /etc/thcr/couchpotato/.couchpotato
+
+### START HEADPHONES SERVICE
+/bin/bash /etc/thcr/headphones/.headphones
+
+### START SICKRAGE SERVICE
+/bin/bash /etc/thcr/sickrage/.sickrage
+
+### START TRANSMISSION SERVICE
+/bin/bash /etc/thcr/transmission/.transmission

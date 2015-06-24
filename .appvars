@@ -1,0 +1,22 @@
+### APP VARS
+TYPE=svc
+NAME=thcr
+CONFIG_DIR=$HOME/.thcr
+CONFIG_VOL=/etc/thcr
+FETCH_DIR=$HOME/fetch
+FETCH_VOL=/fetch
+USER_DIR=$HOME/downloads
+USER_VOL=/downloads
+CPA_PORT=5050
+HPA_PORT=8081
+SRA_PORT=8181
+GUI_PORT=9091
+P2P_PORT=54321
+
+### RUNTIME VARS
+HOSTNAME=$(hostname)
+USER=$(whoami)
+IMG=$TYPE/$NAME
+APP=$USER.$NAME
+LUID=$(id -u $USER)
+LGID=$(id -g $USER)

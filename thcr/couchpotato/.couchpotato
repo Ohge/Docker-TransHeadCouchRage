@@ -1,0 +1,15 @@
+#!/bin/bash
+
+### SET VARIABLES
+USER=couchpotato
+CONFIG_DIR=/etc/thcr/couchpotato
+FETCH_DIR=/fetch
+USER_DIR=/downloads
+USER_CONFIG=$CONFIG_DIR/settings.conf
+DEFAULT_CONFIG=$CONFIG_DIR/settings.conf.default
+
+### MANAGE CONFIGS
+if [[ ! -f $USER_CONFIG ]]; then cp $DEFAULT_CONFIG $USER_CONFIG; fi
+
+### START SERVICE USING RUNTIME UID AND GID
+python /opt/CouchPotatoServer/CouchPotato.py --data_dir $CONFIG_DIR --config_file $USER_CONFIG 2>&1 > $CONFIG_DIR/$USER.log &

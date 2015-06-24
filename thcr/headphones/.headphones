@@ -1,0 +1,16 @@
+#!/bin/bash
+
+### SET VARIABLES
+USER=headphones
+APP_DIR=/opt/headphones
+CONFIG_DIR=/etc/thcr/headphones
+FETCH_DIR=/fetch
+USER_DIR=/downloads
+USER_CONFIG=$CONFIG_DIR/config.ini
+DEFAULT_CONFIG=$CONFIG_DIR/config.ini.default
+
+### MANAGE CONFIGS
+if [[ ! -f $USER_CONFIG ]]; then cp $DEFAULT_CONFIG $USER_CONFIG; fi
+
+### START SERVICE USING RUNTIME UID AND GID
+python $APP_DIR/Headphones.py --nolaunch --datadir $CONFIG_DIR 2>&1 > $CONFIG_DIR/$USER.log 2>&1 &
