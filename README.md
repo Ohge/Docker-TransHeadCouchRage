@@ -5,7 +5,7 @@ This is still a "very alpha" release. Please check back for the finished project
 
 Persistent user directories:
 
-~/.docker-thcr
+~/.thcr
 
 ~/downloads
 
@@ -34,6 +34,6 @@ Open your browser to start using the SickRage webGUI
 
 
 ## Future Releases
-- Use apache2 instance to compact all 4 services on to a single port with a simple frontend.
+- Use Nginx instance to compact all 4 services on to a single port with a simple frontend.
 
 - Add PLEX and Samba support.
