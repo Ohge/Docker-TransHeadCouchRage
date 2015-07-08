@@ -1,0 +1,3 @@
+if ($status ~ ^[45]) {
+	access_log /etc/thcr/nginx/logs/access.log;
+}

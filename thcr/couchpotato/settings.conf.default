@@ -6,7 +6,7 @@ ssl_cert =
 data_dir = /etc/thcr/couchpotato/
 permission_folder = 0755
 development = 0
-url_base = 
+url_base = couchpotato
 ipv6 = 0
 debug = 0
 launch_browser = 0
@@ -33,7 +33,7 @@ ignored_genres =
 
 [manage]
 startup_scan = True
-library_refresh_interval = 0
+library_refresh_interval = 168
 cleanup = True
 enabled = 1
 library = /downloads/Movies/

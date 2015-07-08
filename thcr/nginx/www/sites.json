@@ -1,0 +1,44 @@
+var sites = [
+//{
+//	"id":"mediaremote",
+//	"name":"MediaRemote",
+//	"link":"mediaremote/",
+//	"icon":"mediaremote.png",
+//	"desc":"MediaRemote browser and player"
+//},
+{
+	"id":"transmission",
+	"name":"Transmission",
+	"link":"transmission/",
+	"icon":"transmission.png",
+	"desc":"Transmission download manager"
+},
+{
+	"id":"headphones",
+	"name":"Headphones",
+	"link":"headphones/",
+	"icon":"headphones.png",
+	"desc":"Headphones download manager"
+},
+{
+	"id":"couchpotato",
+	"name":"CouchPotato",
+	"link":"couchpotato/",
+	"icon":"couchpotato.png",
+	"desc":"CouchPotato download manager"
+},
+{
+	"id":"sickrage",
+	"name":"SickRage",
+	"link":"sickrage/",
+	"icon":"sickrage.png",
+	"desc":"SickRage download manager"
+}
+//{
+//	"id":"webaccess",
+//	"name":"WebAcess",
+//	"link":"webaccess/",
+//	"icon":"webaccess.png",
+//	"desc":"WebAccess manager"
+//}
+];

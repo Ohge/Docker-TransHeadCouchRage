@@ -1,0 +1,8 @@
+#!/bin/bash
+
+### SET VARIABLES
+CONFIG_DIR=/etc/thcr/nginx
+USER_CONFIG=$CONFIG_DIR/nginx.conf
+
+### START SERVICE USING RUNTIME UID AND GID
+/usr/sbin/nginx -c $USER_CONFIG 2>&1

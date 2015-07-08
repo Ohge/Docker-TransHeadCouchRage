@@ -4,24 +4,24 @@ MAINTAINER Ohge <https://github.com/Ohge>
 ### INSTALL DEPENDENCIES
 RUN set -xe &&\
     apt-get update &&\
-    apt-get install -y git-core python python-cheetah
+    apt-get install -y git-core python python-cheetah software-properties-common nginx &&\
+    add-apt-repository -y ppa:nginx/stable
 
-### INSTALL COUCHPOTATO
-RUN cd /opt &&\
-    git clone https://github.com/RuudBurger/CouchPotatoServer.git
+### INSTALL TRANSMISSION
+RUN apt-get install -y transmission-daemon
 
 ### INSTALL HEADPHONES
 RUN cd /opt &&\
     git clone https://github.com/rembo10/headphones.git
 
+### INSTALL COUCHPOTATO
+RUN cd /opt &&\
+    git clone https://github.com/RuudBurger/CouchPotatoServer.git
+
 ### INSTALL SICKRAGE
 RUN cd /opt &&\
     git clone https://github.com/echel0n/SickRage.git &&\
     cp /opt/SickRage/autoProcessTV/autoProcessTV.cfg.sample /opt/SickRage/autoProcessTV/autoProcessTV.cfg
-
-### INSTALL TRANSMISSION
-RUN set -xe &&\
-    apt-get install -y transmission-daemon
 
 ### CLEAN UP CONTAINER
 RUN apt-get clean &&\
@@ -33,10 +33,8 @@ VOLUME ["/downloads"]
 VOLUME ["/fetch"]
 
 ### EXPOSE PORTS
-EXPOSE 5050
-EXPOSE 8081
-EXPOSE 8181
-EXPOSE 9091
+EXPOSE 80
+EXPOSE 443
 EXPOSE 54321
 EXPOSE 54321/udp
 

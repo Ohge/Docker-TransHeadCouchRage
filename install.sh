@@ -33,21 +33,13 @@ CMDRES=$(mkdir -p $FETCH_DIR)
 if [ $? -eq 0 ]; then echo "complete";
 else echo -e "failed!\n$CMDRES"; exit 1; fi
 
-### FIND CPA PORT
-LCPA_PORT=$(GetPort $CPA_PORT)
-echo "Installation of cpa_port $LCPA_PORT complete";
+### FIND HTP PORT
+LHTP_PORT=$(GetPort $HTP_PORT)
+echo "Installation of htp_port $LHTP_PORT complete";
 
-### FIND HPA PORT
-LHPA_PORT=$(GetPort $HPA_PORT)
-echo "Installation of hpa_port $LHPA_PORT complete";
-
-### FIND SRA PORT
-LSRA_PORT=$(GetPort $SRA_PORT)
-echo "Installation of sra_port $LSRA_PORT complete";
-
-### FIND GUI PORT
-LGUI_PORT=$(GetPort $GUI_PORT)
-echo "Installation of gui_port $LGUI_PORT complete";
+### FIND SSL PORT
+LSSL_PORT=$(GetPort $SSL_PORT)
+echo "Installation of ssl_port $LSSL_PORT complete";
 
 ### FIND P2P PORT
 LP2P_PORT=$(GetPort $P2P_PORT)
@@ -62,10 +54,8 @@ RUN=$(docker run -d \
 -v $CONFIG_DIR:$CONFIG_VOL \
 -v $FETCH_DIR:$FETCH_VOL \
 -v $USER_DIR:$USER_VOL \
--p $LCPA_PORT:$CPA_PORT/tcp \
--p $LHPA_PORT:$HPA_PORT/tcp \
--p $LSRA_PORT:$SRA_PORT/tcp \
--p $LGUI_PORT:$GUI_PORT/tcp \
+-p $LHTP_PORT:$HTP_PORT/tcp \
+-p $LSSL_PORT:$SSL_PORT/tcp \
 -p $LP2P_PORT:$P2P_PORT/tcp \
 -p $LP2P_PORT:$P2P_PORT/udp \
 $IMG)

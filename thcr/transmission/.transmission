@@ -12,4 +12,4 @@ DEF_CONFIG=$CONFIG_DIR/settings.json.default
 if [[ ! -f $USER_CONFIG ]]; then cp $DEF_CONFIG $USER_CONFIG; fi
 
 ### START SERVICE USING RUNTIME UID AND GID
-/usr/bin/transmission-daemon -f -g $CONFIG_DIR 2>&1
+/usr/bin/transmission-daemon -f -g $CONFIG_DIR 2>&1 > $CONFIG_DIR/$USER.log 2>&1 &

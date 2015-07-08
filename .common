@@ -7,9 +7,6 @@ if [ $? -ne 0 ]; then echo "ERROR: You must be a member of the docker group.\nTr
 ### FIND NEXT FREE PORT
 GetPort(){
   PORT=$1
-  ### VERIFY PORT IS LEGAL
-  read LOW HIGH < /proc/sys/net/ipv4/ip_local_port_range
-  if [ $PORT -gt $HIGH ]; then echo "Port must be less than $HIGH"; exit 1; fi
   ### CHECK FOR NEXT AVAILABLE PORT
   NEXT=1
   while [[ "$NEXT" -gt 0 ]]; do

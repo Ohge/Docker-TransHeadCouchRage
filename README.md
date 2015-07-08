@@ -12,11 +12,11 @@ Persistent user directories:
 ~/fetch
 
 ## Requirements
--Debian/Ubuntu base OS (other flavors untested yet)
+- Debian/Ubuntu base OS (other flavors untested yet)
 
--Docker v1.6
+- Docker v1.6
 
--Installing user must be in "docker" group
+- Installing user must be in "docker" group
 
 ## Install
 Clone the project
@@ -34,6 +34,8 @@ Open your browser to start using the SickRage webGUI
 
 
 ## Future Releases
-- Use Nginx instance to compact all 4 services on to a single port with a simple frontend.
+- Add PLEX and Samba support
 
-- Add PLEX and Samba support.
+- Add VLC/FFMPEG streaming solution
+
+- Add htaccess control app
